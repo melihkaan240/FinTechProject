@@ -24,19 +24,17 @@ function App() {
           setServerError(result)
         }else if(Array.isArray(result.data)){
           setSearchResult(result.data)
-        console.log("result data:",result.data);
 
         }
-        console.log("result:",result);
         
-        console.log("aaaaa",searchResult)
+        console.log(searchResult)
     }
     
   return (
     <div className="App">
       <Search onClick={onClick} search={search} handleChange={handleChange}/>
       {serverError && <h1>{serverError}</h1>}
-     <CardList />
+     <CardList searchResults={searchResult} />
     </div>
   );
 }
