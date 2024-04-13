@@ -11,21 +11,23 @@ interface Props {
 
 const Card: React.FC<Props> = ({id, searchResult, onPortfolioCreate}: Props) : JSX.Element=>{
     return (
-        <div className="card" key={id}>
-            <img 
-            src="https://cdn.artphotolimited.com/images/5b9fc1ecac06024957be8806/1000x1000/le-titanic-quittant-belfast.jpg"
-             alt="company logo"
-              />
-            <div className="details">
-                <h2>{searchResult.name} ({searchResult.symbol})</h2>
-                <p>{searchResult.currency}</p>
-            </div>
-            <p className="info">{searchResult.exchangeShortName} - {searchResult.stockExchange} </p>
-            <AddPortfolio 
-                onPortfolioCreate={onPortfolioCreate}
-                symbol={searchResult.symbol}
-            />
-        </div>
+        <div
+        className="flex flex-col items-center justify-between w-full p-6 bg-slate-100 rounded-lg md:flex-row"
+        key={id}
+        id={id}
+      >
+        <h2 className="font-bold text-center text-black md:text-left">
+          {searchResult.name} ({searchResult.symbol})
+        </h2>
+        <p className="text-black">{searchResult.currency}</p>
+        <p className="font-bold text-black">
+          {searchResult.exchangeShortName} - {searchResult.stockExchange}
+        </p>
+        <AddPortfolio
+          onPortfolioCreate={onPortfolioCreate}
+          symbol={searchResult.symbol}
+        />
+      </div>
     )
 }
 
