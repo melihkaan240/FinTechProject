@@ -33,7 +33,7 @@ const CompanyPage: React.FC<Props> = (props: Props) : JSX.Element=>{
 
             <Sidebar />   
 
-            <CompanyDashboard ticker="">
+            <CompanyDashboard ticker={ticker!}>
                 <Tile title="Company Name" subTitle={company.companyName}/>
             </CompanyDashboard>
 
