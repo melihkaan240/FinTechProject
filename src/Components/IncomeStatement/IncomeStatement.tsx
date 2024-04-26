@@ -5,6 +5,7 @@ import { Link ,useOutletContext} from "react-router-dom";
 import { CompanyIncomeStatement } from "../../company";
 import { getIncomeStatement } from "../../api";
 import Table from "../Table/Table";
+import Spinner from "../Spinners/Spinner";
 interface Props {}
 
 const configs = [
@@ -65,8 +66,8 @@ const configs = [
 
 const IncomeStatement = (props: Props) => {
   const ticker = useOutletContext<string>();
-  const [incomeStatement, setIncomeStatement] =
-    useState<CompanyIncomeStatement[]>();
+  const [incomeStatement, setIncomeStatement] = useState<CompanyIncomeStatement[]>();
+
     useEffect(() => {
       const getRatios = async () => {
         const result = await getIncomeStatement(ticker!);
@@ -86,8 +87,7 @@ const IncomeStatement = (props: Props) => {
       {incomeStatement ? (
         <Table config={configs} data={incomeStatement} />
       ) : (
-        // <Spinner />
-        <div>dsf</div>
+        <Spinner />
       )}
     </>
   );
