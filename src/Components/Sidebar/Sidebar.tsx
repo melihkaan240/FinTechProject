@@ -33,7 +33,7 @@ const Sidebar: React.FC<Props> = (props: Props) : JSX.Element=>{
                 </Link>
 
                 <Link 
-                to="income-profile" 
+                to="income-statement"
                 className="flex md:min-w-full text-blueGray-500 text-medium uppercase font-bold block pt-1 pb-4 no-underline">
 
                 <FaHome />
