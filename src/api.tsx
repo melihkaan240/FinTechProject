@@ -82,3 +82,4 @@ export const getCashFlow = async (query: string) => {
     console.log("error message: ", error.message);
   }
 };
+
