@@ -7,6 +7,7 @@ import Sidebar from "../../Components/Sidebar/Sidebar";
 import CompanyDashboard from "../../Components/CompanyDashboard/CompanyDashboard";
 import Tile from "../../Components/Tile/Tile";
 import { getIncomeStatement } from "../../api";
+import Spinner from "../../Components/Spinners/Spinner";
 interface Props {
 
 };
@@ -48,7 +49,9 @@ const CompanyPage: React.FC<Props> = (props: Props) : JSX.Element=>{
 
         </div>)
             :
-            (<div>Company not found!</div>)
+            (
+                <Spinner />
+            )
         }
        </>
     )
